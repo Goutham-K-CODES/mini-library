@@ -1,7 +1,7 @@
 const dataStore = require('../../lib/dataStore.js');
 
 module.exports = function handler(req, res) {
-  // Enable CORS
+ 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -21,7 +21,7 @@ module.exports = function handler(req, res) {
 
   switch (method) {
     case 'GET':
-      // GET /api/books/[id] - Get specific book
+      
       const book = dataStore.getBook(id);
       if (!book) {
         res.status(404).json({ error: 'Book not found' });
@@ -31,7 +31,7 @@ module.exports = function handler(req, res) {
       break;
 
     case 'DELETE':
-      // DELETE /api/books/[id] - Delete book
+     
       const deleteResult = dataStore.deleteBook(id);
       res.status(200).json(deleteResult);
       break;
