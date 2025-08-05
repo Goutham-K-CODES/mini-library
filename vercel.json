@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "name": "mini-library-app",
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "installCommand": "npm install",
+  "devCommand": "npm start",
+  "framework": "create-react-app",
+  "rewrites": [
+    {
+      "source": "/api/books/:id/toggle",
+      "destination": "/api/books/[id]/toggle"
+    },
+    {
+      "source": "/api/books/:id",
+      "destination": "/api/books/[id]"
+    },
+    {
+      "source": "/api/books",
+      "destination": "/api/books"
+    },
+    {
+      "source": "/((?!api).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
